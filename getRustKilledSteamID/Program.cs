@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Win32;
 using System.IO;
-
+using System.Text;
 
 namespace getRustKilledSteamID
 {
@@ -9,6 +9,8 @@ namespace getRustKilledSteamID
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             RegistryKey rustKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 252490", false);
             if (rustKey == null)
             {
